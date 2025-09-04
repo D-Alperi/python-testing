@@ -15,5 +15,5 @@ def guess():
         break
       gissning = int(input("Gissa igen: "))
     except ValueError:
-      print("Bokstäver är inte nummer, gissa pånytt: ")
+      print("Det är inte ett heltal, gissa pånytt: ")
 guess()
