@@ -4,14 +4,16 @@ def guess():
   num = random.randint(1,100)
   gissning = int(input("Gissa ett nummer mellan 1 och 100: "))
   while True:
-    i = i + 1
-    if gissning > num:
-      print("Ditt nummer var för stort")
-    elif gissning < num:
-      print("Ditt nummer var för litet")
-    elif gissning == num:
-      print(f"Grattis, du gissade rätt med {i} gissningar")
-      break
-    gissning = int(input("Gissa igen: "))
-
+    try:
+      i = i + 1
+      if gissning > num:
+        print("Ditt nummer var för stort")
+      elif gissning < num:
+        print("Ditt nummer var för litet")
+      elif gissning == num:
+        print(f"Grattis, du gissade rätt med {i} gissningar")
+        break
+      gissning = int(input("Gissa igen: "))
+    except ValueError:
+      print("Bokstäver är inte nummer, gissa pånytt: ")
 guess()
