@@ -2,9 +2,9 @@ import random
 def guess():
   i = 0
   num = random.randint(1,100)
+  gissning = int(input("Gissa ett nummer mellan 1 och 100: "))
   while True:
     i = i + 1
-    gissning = int(input("Gissa ett nummer: "))
     if gissning > num:
       print("Ditt nummer var för stort")
     elif gissning < num:
@@ -12,3 +12,6 @@ def guess():
     elif gissning == num:
       print(f"Grattis, du gissade rätt med {i} gissningar")
       break
+    gissning = int(input("Gissa igen: "))
+
+guess()
