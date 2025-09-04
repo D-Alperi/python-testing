@@ -1,12 +1,14 @@
 import random
 def guess():
+  i = 0
   num = random.randint(1,100)
   while True:
+    i = i + 1
     gissning = int(input("Gissa ett nummer: "))
     if gissning > num:
       print("Ditt nummer var för stort")
     elif gissning < num:
       print("Ditt nummer var för litet")
     elif gissning == num:
-      print("Grattis, du gissade rätt")
+      print(f"Grattis, du gissade rätt med {i} gissningar")
       break
