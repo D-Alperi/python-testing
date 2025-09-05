@@ -2,18 +2,21 @@ import random
 def guess():
   i = 0
   num = random.randint(1,100)
-  gissning = int(input("Gissa ett heltal mellan 1 och 100: "))
+  s_gissning = int(input("Gissa ett heltal mellan 1 och 100: "))
   while True:
+    i = i + 1
     try:
-      i = i + 1
-      if gissning > num:
-        print("Ditt nummer var för stort")
-      elif gissning < num:
-        print("Ditt nummer var för litet")
-      elif gissning == num:
-        print(f"Grattis, du gissade rätt med {i} gissningar")
-        break
-      gissning = int(input("Gissa igen: "))
-    except ValueError:
-      print("Det är inte ett heltal, gissa pånytt: ")
+      gissning = int(s_gissning)
+    except:
+      print("inte ett giltigt svar.")
+      s_gissning = input("Gissa nu med heltal: ")
+      continue
+    if gissning > num:
+      print("Ditt nummer var för stort")
+    elif gissning < num:
+      print("Ditt nummer var för litet")
+    elif gissning == num:
+      print(f"Grattis, du gissade rätt med {i} gissningar")
+      break
+    s_gissning = int(input("Gissa igen: "))
 guess()
